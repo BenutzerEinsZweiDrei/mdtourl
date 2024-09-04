@@ -12,11 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const maxLength = 5000; // Set a reasonable maximum length
     if (markdownContent.length > maxLength) {
       console.error("Markdown content too long");
-      document.getElementById("content").innerText = "Content is too long to display.";
+      document.getElementById("mdhere").innerText = "Content is too long to display.";
       return;
     }
 
-    const sanitizedHTML = DOMPurify.sanitize(marked.parse(decodeURIComponent(markdownContent)));
+    const sanitizedHTML = marked.parse(DOMPurify.sanitize(decodeURIComponent(markdownContent)));
     document.getElementById("mdhere").innerHTML = sanitizedHTML;
 
     // executeInlineScripts(); // Execute any inline scripts that were sanitized
