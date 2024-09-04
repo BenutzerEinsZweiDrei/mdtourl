@@ -24,9 +24,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function setLinksToOpenInNewTab() {
-    const links = document.querySelectorAll("a");
-    links.forEach(link => link.setAttribute("target", "_blank"));
-  }
+  const links = document.querySelectorAll("#mdhere a");
+  links.forEach(link => {
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener noreferrer");
+  });
+}
+
 
   // Get the markdown content directly from the query parameter 'content'
   const urlParams = new URLSearchParams(window.location.search);
