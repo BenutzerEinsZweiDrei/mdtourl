@@ -6,7 +6,26 @@
     <link rel="stylesheet" href="MdRender/style.css" />
   </head>
   <body>
-    <div id="content"></div>
+    <div id="content">
+
+      <form action="/" method="get" onsubmit="encodeMarkdown()">
+        <label for="markdown">Enter Markdown:</label><br>
+        <textarea id="markdown" name="content" rows="4" cols="50" placeholder="# Headline 1"></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function encodeMarkdown() {
+            // Get the textarea element
+            const textarea = document.getElementById('markdown');
+            
+            // URL-encode the content of the textarea
+            textarea.value = encodeURIComponent(textarea.value);
+        }
+    </script>
+      
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.0/dist/purify.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/atom-one-dark-reasonable.min.css">
