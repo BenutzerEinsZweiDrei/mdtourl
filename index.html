@@ -8,11 +8,15 @@
   <body>
     <div id="mdhere">
 
+      <h2>Markdown to URL</h2>
+
       <form action="/mdtourl/" method="get" onsubmit="encodeMarkdown()">
         <label for="markdown">Enter Markdown:</label><br>
         <textarea id="markdown" name="content" rows="4" cols="50" placeholder="# Headline 1"></textarea><br><br>
         <input type="submit" value="Submit">
     </form>
+
+      <p>Generate URL with submit. Use URL Shortener. </p>
 
     <script>
         function encodeMarkdown() {
