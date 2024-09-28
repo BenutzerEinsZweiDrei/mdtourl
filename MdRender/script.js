@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function renderMarkdownFromString(markdownContent) {
     // Limit the content length to prevent DoS attacks
-    const maxLength = 5000; // Set a reasonable maximum length
+    const maxLength = 20000; // Set a reasonable maximum length
     if (markdownContent.length > maxLength) {
       console.error("Markdown content too long");
       document.getElementById("mdhere").innerText = "Content is too long to display.";
